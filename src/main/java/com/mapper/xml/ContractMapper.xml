@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.ContractMapper">
+  <resultMap id="BaseResultMap" type="com.model.Contract">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="customer_id" jdbcType="INTEGER" property="customerId" />
+    <result column="salespeople_id" jdbcType="INTEGER" property="salespeopleId" />
+    <result column="is_fulfill" jdbcType="VARCHAR" property="isFulfill" />
+    <result column="signing_date" jdbcType="TIMESTAMP" property="signingDate" />
+    <result column="effective_date" jdbcType="TIMESTAMP" property="effectiveDate" />
+    <result column="expiration_date" jdbcType="TIMESTAMP" property="expirationDate" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, customer_id, salespeople_id, is_fulfill, signing_date, effective_date, expiration_date, 
+    description, address
+  </sql>
+</mapper>

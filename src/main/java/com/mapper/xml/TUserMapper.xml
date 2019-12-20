@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.xml.TUserMapper">
+  <resultMap id="BaseResultMap" type="com.model.TUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="card" jdbcType="VARCHAR" property="card" />
+    <result column="birth" jdbcType="TIMESTAMP" property="birth" />
+    <result column="birthplace" jdbcType="VARCHAR" property="birthplace" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="role" jdbcType="VARCHAR" property="role" />
+    <result column="actual_name" jdbcType="VARCHAR" property="actualName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, username, password, card, birth, birthplace, sex, address, phone, role, actual_name
+  </sql>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.PurchaseOrderMapper">
+  <resultMap id="BaseResultMap" type="com.model.PurchaseOrder">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="product_id" jdbcType="INTEGER" property="productId" />
+    <result column="quantity" jdbcType="INTEGER" property="quantity" />
+    <result column="purchase_date" jdbcType="TIMESTAMP" property="purchaseDate" />
+    <result column="supplier" jdbcType="VARCHAR" property="supplier" />
+    <result column="warehouse_manager_id" jdbcType="INTEGER" property="warehouseManagerId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, product_id, quantity, purchase_date, supplier, warehouse_manager_id
+  </sql>
+</mapper>

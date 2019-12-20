@@ -1,0 +1,25 @@
+server:
+  port: 10080
+
+spring:
+  datasource:
+    url:
+    username:
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#jwt配置
+config:
+  threshold: 20
+  supplynum: 100
+  salt:
+  jwt:
+    #加密钥匙
+    secret: 
+    #token有效时长，单位：秒
+    expire: 3600
+    #http请求头字段名称
+    header: token
+
+
+

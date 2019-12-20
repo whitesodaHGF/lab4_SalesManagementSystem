@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.ShippingOrderMapper">
+  <resultMap id="BaseResultMap" type="com.model.ShippingOrder">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="shipping_date" jdbcType="TIMESTAMP" property="shippingDate" />
+    <result column="shipping_address" jdbcType="VARCHAR" property="shippingAddress" />
+    <result column="receipt_address" jdbcType="VARCHAR" property="receiptAddress" />
+    <result column="shipping_status" jdbcType="TINYINT" property="shippingStatus" />
+    <result column="warehouse_manager_id" jdbcType="INTEGER" property="warehouseManagerId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, order_id, shipping_date, shipping_address, receipt_address, shipping_status, 
+    warehouse_manager_id
+  </sql>
+</mapper>
