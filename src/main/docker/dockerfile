@@ -1,0 +1,21 @@
+# 选择最轻量级的包，如果缺少必要的库可以换成 -slim 或不加
+FROM openjdk:8-jdk-alpine
+
+VOLUME /tmp
+
+ARG TIME_ZONE=Asia/Shanghai
+ARG PORT=10080
+
+# 设定时区
+ENV TZ=${TIME_ZONE}
+RUN set -eux; \
+    apk add --no-cache --update tzdata; \
+    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime; \
+    echo $TZ > /etc/timezone
+
+# 对于联网应用而言，必须在Dockerfile中指定暴露的端口，否则该端口无法映射。
+EXPOSE 10080
+
+ADD lab4.jar app.jar
+
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]

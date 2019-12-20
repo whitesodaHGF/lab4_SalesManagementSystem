@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url:
-    username:
-    password:
+    url: jdbc:mysql://47.98.161.47:3306/lab4
+    username: root
+    password: HGFhgf555
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 #jwt配置
@@ -15,7 +15,7 @@ config:
   salt:
   jwt:
     #加密钥匙
-    secret: 
+    secret: 012josuke456jojo
     #token有效时长，单位：秒
     expire: 3600
     #http请求头字段名称
