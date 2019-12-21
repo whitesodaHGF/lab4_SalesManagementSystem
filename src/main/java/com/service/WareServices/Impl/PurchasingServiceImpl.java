@@ -89,6 +89,17 @@ public class PurchasingServiceImpl implements PurchasingService {
             shippingOrder.setReceiptAddress(contract.getAddress());
             shippingOrder.setQuantity(purchaseOrder.getQuantity());
             shippingOrderMapper.insert(shippingOrder);
+
+            // 修改采购单已发货数量
+            purchasingList.setQuantityShipped(purchasingList.getQuantityShipped()+purchaseOrder.getQuantity());
+            purchasingListMapper.updateByPrimaryKey(purchasingList);
+
+            // 修改采购单状态
+            if(purchasingList.getQuantityShipped().equals(purchasingList.getQuantity())){
+                purchasingListMapper.setStatusOk(purchasingList.getId());
+            }else{
+                purchasingListMapper.setStatusToReady(purchasingList.getId());
+            }
         }
         else{
             // 无采购单消息 增加对应商品库存

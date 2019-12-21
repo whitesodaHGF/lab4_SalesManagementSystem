@@ -36,8 +36,14 @@ public interface PurchasingListMapper extends Mapper<PurchasingList> {
             "and contract.customer_id=customer.id\n")
     List<PurchasingListDTO> getPurchasingListDTOs();
 
-    @Update("update purchasing_list set status='已完成' where id=#{id}")
-    void setStatus(int id);
+    @Update("update purchasing_list set status='进货中' where id=#{id}")
+    void setStatusToPurchasing(int id);
+
+    @Update("update purchasing_list set status='待处理' where id=#{id}")
+    void setStatusToReady(int id);
+
+    @Update("update purchasing_list set status='已处理' where id=#{id}")
+    void setStatusOk(int id);
 
     @Select("<script>" +
             "select purchasing_list.id,\n" +

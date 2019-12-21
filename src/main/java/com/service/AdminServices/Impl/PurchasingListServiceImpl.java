@@ -172,10 +172,10 @@ public class PurchasingListServiceImpl implements PurchasingListService {
                 // 修改采购单中已发货数量
                 purchasingList.setQuantityShipped(quantityShipped+productQuantity);
                 purchasingListMapper.updateByPrimaryKey(purchasingList);
+                purchasingListMapper.setStatusToPurchasing(purchasingList.getId());
                 result="处理成功，库存不足，生成数量为"+shippingOrder.getQuantity()+"的发货单,余量待仓库管理员进货";
             }else{
-                purchasingList.setQuantityShipped(quantityShipped+(quantity-productQuantity));
-                purchasingListMapper.updateByPrimaryKey(purchasingList);
+                purchasingListMapper.setStatusToPurchasing(purchasingList.getId());
                 result="处理成功，库存不足，生成数量为"+(quantity-productQuantity)+"的进货单,待仓库管理员进货";
             }
             // 生成数量为发货单及采购数量之差的进货单

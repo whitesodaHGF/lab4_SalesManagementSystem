@@ -26,7 +26,7 @@ public interface ContractMapper extends Mapper<Contract> {
     @Select("select count(*)\n" +
             "from contract,purchasing_list\n" +
             "where contract.id=purchasing_list.contract_id\n" +
-            "and status='已完成'\n" +
+            "and purchasing_list.status='已处理'\n" +
             "and contract_id=#{id}")
     int countDone(int id);
 
@@ -53,6 +53,7 @@ public interface ContractMapper extends Mapper<Contract> {
             "<if test='startDate!=null and endDate!=null'>" +
             "and contract.signing_date between #{startDate} and #{endDate} " +
             "</if>" +
+            "and contract.salespeople_id=#{SalesId} " +
             "group by contract.id" +
             "</script>")
     List<PurchasingListDTO> getFulfillContract(@Param("startDate") Date startDate,
