@@ -85,8 +85,11 @@ public class PurchasingListServiceImpl implements PurchasingListService {
     public void updatePurchasingList(PurchasingList purchasingList) {
         log.info(purchasingList.toString());
         if (purchasingList.getId() != null) {
+            purchasingList.setQuantityShipped(0);
             purchasingListMapper.updateByPrimaryKey(purchasingList);
         } else {
+            purchasingList.setQuantityShipped(0);
+            purchasingList.setStatus("待处理");
             purchasingListMapper.insert(purchasingList);
         }
     }

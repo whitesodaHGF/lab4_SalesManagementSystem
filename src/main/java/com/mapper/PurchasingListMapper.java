@@ -63,7 +63,7 @@ public interface PurchasingListMapper extends Mapper<PurchasingList> {
             "<if test='startDate!=null and endDate!=null'>" +
             "and contract.signing_date between #{startDate} and #{endDate} " +
             "</if>" +
-            "and purchasing_list.status='已完成'" +
+            "and purchasing_list.status='已处理'" +
             "</script>")
     List<PurchasingListDTO> getSalesStatistic(@Param("startDate") Date startDate,
                                               @Param("endDate") Date endDate,
@@ -94,7 +94,7 @@ public interface PurchasingListMapper extends Mapper<PurchasingList> {
             "<if test='startDate!=null and endDate!=null'>" +
             "and contract.signing_date between #{startDate} and #{endDate} " +
             "</if>" +
-            "and purchasing_list.status='已完成'" +
+            "and purchasing_list.status='已处理'" +
             "and contract.salespeople_id=#{SalesId}" +
             "</script>")
     List<PurchasingListDTO> getSalesStatisticBySalesId(@Param("startDate") Date startDate,

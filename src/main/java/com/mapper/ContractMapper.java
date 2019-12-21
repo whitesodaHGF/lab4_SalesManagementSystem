@@ -26,7 +26,7 @@ public interface ContractMapper extends Mapper<Contract> {
     @Select("select count(*)\n" +
             "from contract,purchasing_list\n" +
             "where contract.id=purchasing_list.contract_id\n" +
-            "and status='已处理'\n" +
+            "and status='已完成'\n" +
             "and contract_id=#{id}")
     int countDone(int id);
 
